@@ -1,3 +1,9 @@
+Q5. Display every patient's first_name.
+Order the list by the length of each name and then by alphabetically.
+	SELECT first_name FROM patients
+order by len(first_name ), first_name 
+
+
 Q4. Show patient_id, first_name, last_name from patients whos diagnosis is 'Dementia'.
 Primary diagnosis is stored in the admissions table.
 
