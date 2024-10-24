@@ -1,12 +1,31 @@
+Q11. Show all allergies ordered by popularity. Remove NULL values from query.
+				SELECT
+			  allergies,
+			  COUNT(*) AS total_diagnosis
+			FROM patients
+			WHERE
+			  allergies IS NOT NULL
+			GROUP BY allergies
+			ORDER BY total_diagnosis DESC
+
+
+Q10, Show first name, last name and role of every person that is either patient or doctor.
+The roles are either "Patient" or "Doctor"
+
+		SELECT first_name, last_name, 'Patient' as role FROM patients
+	    union all
+	select first_name, last_name, 'Doctor' from doctors;
+
+
 Q9.Show the city and the total number of patients in the city.
 Order from most to least patients and then by city name ascending.
 
-	SELECT
-  city,
-  COUNT(*) AS num_patients
-FROM patients
-GROUP BY city
-ORDER BY num_patients DESC, city asc; 
+			SELECT
+		  city,
+		  COUNT(*) AS num_patients
+		FROM patients
+		GROUP BY city
+		ORDER BY num_patients DESC, city asc; 
 
 Q8. Show patient_id, diagnosis from admissions. Find patients admitted multiple times for the same diagnosis.			
 				SELECT
