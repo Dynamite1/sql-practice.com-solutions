@@ -1,3 +1,24 @@
+Q14.Show the province_id(s), sum of height; where the total sum of its patient's height is greater than or equal to 7,000.
+
+	SELECT
+  province_id,
+  SUM(height) AS sum_height
+FROM patients
+GROUP BY province_id
+HAVING sum_height >= 7000
+	
+	
+Q13.We want to display each patient's full name in a single column. Their last_name in all upper letters must appear first, then first_name in all lower case letters. Separate the last_name and first_name with a comma. Order the list by the first_name in decending order
+EX: SMITH,jane
+
+	SELECT
+  CONCAT(UPPER(last_name), ',', LOWER(first_name)) AS new_name_format
+FROM patients
+ORDER BY first_name DESC;
+	
+	
+	
+	
 Q12. Show all patient's first_name, last_name, and birth_date who were born in the 1970s decade. Sort the list starting from the earliest birth_date.
 	
 	SELECT
