@@ -1,3 +1,11 @@
+Q17.Show all columns for patient_id 542's most recent admission_date.
+		SELECT *
+	FROM admissions
+	GROUP BY patient_id
+	HAVING
+	  patient_id = 542
+	  AND max(admission_date)
+	
 Q16. Show all of the days of the month (1-31) and how many admission_dates occurred on that day. Sort by the day with most admissions to least admissions.
 
 		SELECT
